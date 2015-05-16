@@ -1,0 +1,69 @@
+\documentclass[DIV=7, pagesize=auto]{scrartcl}
+\usepackage{fixltx2e}
+\usepackage{etex}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage[unicode=true]{hyperref}
+\newcommand*{\pkg}[1]{\textsf{#1}}
+\newcommand*{\cs}[1]{\texttt{\textbackslash#1}}
+\makeatletter
+\newcommand*{\cmd}[1]{\cs{\expandafter\@gobble\string#1}}
+\makeatother
+\newcommand*{\meta}[1]{\textlangle\textsl{#1}\textrangle}
+\newcommand*{\marg}[1]{\texttt{\{}\meta{#1}\texttt{\}}}
+\newcommand*{\oarg}[1]{\texttt{[}\meta{#1}\texttt{]}}
+\newcommand*{\ml}[1]{\leavevmode\marginline{\small#1}\ignorespaces}
+\newcommand{\FAT}{\fontsize{60}{30}\selectfont}
+\reversemarginpar
+\addtokomafont{title}{\rmfamily}
+\title{The \pkg{HumaPap} class}
+\author{Author: Maarten Steenhagen}
+\date{\today}
+
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+{\FAT \textsc{humapap}}\\[0.8cm]
+\hrule ~\\[1.4cm]
+{\Huge \emph{A \LaTeX~Document Class}}\\[7cm]
+{\Large \textsc{maarten steenhagen}}\\
+{University College London}\\
+\url{http://www.github.com/msteenhagen}
+\end{center}
+\clearpage
+\tableofcontents
+\clearpage
+\section{Introduction}
+The \LaTeX~system is used in various disciplines within the humanities. 
+The \verb+humapap+ document class is a straightforward but convenient development of the standard \verb+article+ class. It is specifically designed to meet some of the needs of researchers working in the humanities.
+
+\section{Usage}
+The class can be used simply by calling for it in a standard way. Note that the \verb+HumaPap+ class makes use of the \verb+\documenttitle+ option. 
+\begin{quote}
+	\verb+\documentclass{humapap}+\\
+	\verb+\begin{document}+\\
+	\verb++\\
+	\verb+\documenttitle+\\
+	\verb++\\
+	\verb+Lorem ipsum dolor sit amet, consectetur adipisicing elit.+\\
+	\verb++\\
+	\verb+\end{document}+
+\end{quote}
+
+\subsection{Class options}
+Class options can be used to alter the default document layout. Simply add options to the \verb+\documentclass+ command in the document's preamble:
+\begin{quote}
+		\verb+\documentclass[option-1, option-2, ...]{humapap}+
+\end{quote}
+
+\section{Change History:}
+
+\begin{tabular}{@{}l@{ -- }l@{}}
+  v0.1 Maarten Steenhagen
+\end{tabular}
+
+\end{document}

@@ -2,3 +2,15 @@
 *.lb
 
 example.pdf
+
+*.bib
+
+*.bcf
+
+*.fdb_latexmk
+
+*.toc
+
+*.sublime-project
+
+*.sublime-workspace

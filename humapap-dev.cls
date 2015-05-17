@@ -13,6 +13,9 @@
 
 \LoadClass[a4paper,12pt, twoside]{article}
 
+% Here's a list of definitions used in the class, but that can be altered using specific class options.
+\newcommand{\bytitle}{by }
+
 % ===================
 % BEGIN OPTIONS
 % ===================
@@ -25,6 +28,7 @@
 \DeclareOption{journal}{\def\mypapersize{margin=0.65in, paperwidth=13.9cm, paperheight=21.61cm}}
 \DeclareOption*{\PackageWarning{humapap}{Unknown option ‘\CurrentOption’}}
 
+\DeclareOption{noby}{\def\bytitle{}}
 
 \ProcessOptions
 
@@ -69,7 +73,7 @@
 % Then we use the titling package to redefine aspects of the \maketitle option
 \pretitle{\begin{center}\begin{Huge}\titlefont\MakeLowercase}%
 \posttitle{\end{Huge}\end{center}\vspace{-0.6ex}}%
-\newcommand{\bytitle}{by }
+% We use the \bytitle to allow overriding the preposition
 \preauthor{\begin{center}\authorfont\bytitle}%
 \postauthor{\end{center}}%
 % TO DO: I'd love to see the date in the footer of the first page, along with affiliation and contact details

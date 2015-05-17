@@ -40,6 +40,8 @@
 \usepackage{setspace}
 \usepackage[\mypapersize]{geometry}
 
+\usepackage{titling}
+
 % Typeface 
 % ===================
 \RequirePackage{fontspec}
@@ -58,6 +60,23 @@
 % ===================
 % \RequirePackage[style=authoryear-ibid, ibidtracker=constrict, autocite=inline, backend=bibtex]{biblatex}
 % \bibliography{/Users/msteenhagen/Dropbox/Own-Work/BIBLIOGRAPHY/BibDesk/books}
+
+%TITLES
+% ===================
+% First we define some fontfaces for the title
+\newfontface\titlefont [Scale=1.00,Ligatures=NoCommon, Letters=SmallCaps]{Minion Pro}
+\newfontface\authorfont [Scale=1.00,Ligatures=NoCommon]{Minion Pro}
+% Then we use the titling package to redefine aspects of the \maketitle option
+\pretitle{\begin{center}\begin{Huge}\titlefont\MakeLowercase}%
+\posttitle{\end{Huge}\end{center}\vspace{-0.6ex}}%
+\newcommand{\bytitle}{by }
+\preauthor{\begin{center}\authorfont\bytitle}%
+\postauthor{\end{center}}%
+% TO DO: I'd love to see the date in the footer of the first page, along with affiliation and contact details
+\predate{\begin{center}}%
+\postdate{\end{center}}%
+
+
 
 
  

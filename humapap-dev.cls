@@ -1,15 +1,21 @@
 % An article class for a classically formatted humanities paper
-%   humapap-dev.cls
+%   
+% 		humapap-dev.cls
+%
 % Created by Maarten Steenhagen 
 % Department of Philosophy
 % University College London
 % m.steenhagen.09@ucl.ac.uk
-% Drawing on, amongst others, Mark Sprevak's mds-article class
+% Drawing on, among others, Mark Sprevak's mds-article class
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{humapap-dev}[2015/05/16 Hello, this is the HumaPap article class. Currently this class is under development.]
 
 \LoadClass[a4paper,12pt, twoside]{article}
+
+% ===================
+% BEGIN OPTIONS
+% ===================
 
 % Document size
 % ===================
@@ -19,7 +25,13 @@
 \DeclareOption{journal}{\def\mypapersize{margin=0.65in, paperwidth=13.9cm, paperheight=21.61cm}}
 \DeclareOption*{\PackageWarning{humapap}{Unknown option ‘\CurrentOption’}}
 
+
 \ProcessOptions
+
+% ===================
+% END OPTIONS
+% ===================
+
 
 \usepackage{lettrine}
 \usepackage{graphics}
@@ -29,9 +41,10 @@
 \usepackage[\mypapersize]{geometry}
 
 % Typeface 
-\RequirePackage{fontspec}%<copied>
-\RequirePackage{xltxtra}%<copied>
-\RequirePackage{xunicode}%<copied>
+% ===================
+\RequirePackage{fontspec}
+\RequirePackage{xltxtra}
+\RequirePackage{xunicode}
 \defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
 \setmainfont{Minion Pro}
 \setmonofont[Scale=0.75,Ligatures=NoCommon]{Courier}
